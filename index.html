@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ne Perdez Plus Jamais Un Client | SMS Automatique Appels Manqués</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f2f2f2;
+  --accent: #111111;
+  --text: #111111;
+  --text-dim: #666666;
+  --text-mid: #444444;
+  --border: #e5e5e5;
+  --red: #d32f2f;
+  --highlight: #111;
+  --tag-bg: #111;
+  --tag-text: #fff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* NAV */
+nav {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--text);
+  border-radius: 50%;
+  display: inline-block;
+}
+.nav-cta {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.nav-cta:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* HERO */
+.hero {
+  padding: 100px 0 80px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--tag-bg);
+  border-radius: 100px;
+  padding: 7px 16px;
+  font-size: 0.82rem;
+  color: var(--tag-text);
+  font-weight: 500;
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  max-width: 720px;
+  margin-bottom: 28px;
+  color: var(--text);
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero h1 .underline {
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--red);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 44px;
+  font-weight: 400;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+.hero-sub strong {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.25s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  padding: 16px 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1.5px solid var(--border);
+  transition: all 0.25s;
+}
+.btn-secondary:hover {
+  border-color: var(--text-dim);
+  background: var(--surface-2);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* DEMO */
+.demo-section {
+  padding: 80px 0;
+  background: var(--bg);
+}
+.demo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.demo-left h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+.demo-left p {
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-size: 1.02rem;
+}
+
+/* Phone mock */
+.phone-mock {
+  background: #111;
+  border-radius: 32px;
+  padding: 14px;
+  max-width: 280px;
+  margin: 0 auto;
+  border: 3px solid #ddd;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+.phone-notch {
+  width: 80px;
+  height: 5px;
+  background: #333;
+  border-radius: 10px;
+  margin: 0 auto 14px;
+}
+.phone-screen {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px 14px;
+  min-height: 300px;
+}
+.sms-header {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #999;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+}
+.missed-call-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.78rem;
+  color: var(--red);
+  font-weight: 600;
+  animation: smsIn 0.4s 0.5s ease forwards;
+  opacity: 0;
+}
+.missed-icon { font-size: 1rem; }
+.sms-bubble {
+  max-width: 88%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(8px);
+}
+.sms-incoming {
+  background: #111;
+  color: #fff;
+  border-bottom-left-radius: 4px;
+  animation: smsIn 0.4s 1.5s ease forwards;
+  font-weight: 400;
+}
+.sms-time {
+  font-size: 0.65rem;
+  color: #aaa;
+  margin-top: 3px;
+  margin-bottom: 14px;
+  opacity: 0;
+  animation: smsIn 0.3s 2s ease forwards;
+}
+.sms-reply {
+  background: #f2f2f2;
+  color: #333;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+  animation: smsIn 0.4s 3s ease forwards;
+}
+.sms-time-2 {
+  font-size: 0.65rem;
+  color: #aaa;
+  margin-top: 3px;
+  text-align: right;
+  opacity: 0;
+  animation: smsIn 0.3s 3.4s ease forwards;
+}
+@keyframes smsIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* STATS */
+.stats-section {
+  padding: 0 0 80px;
+}
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.stat-card:hover {
+  border-color: #ccc;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+.stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -2px;
+}
+.stat-label {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* HOW */
+.how-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 14px;
+}
+.how-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 56px;
+  line-height: 1.1;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.step {
+  position: relative;
+  padding: 32px 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: all 0.3s;
+}
+.step:hover {
+  border-color: #ccc;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+.step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--surface-2);
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  line-height: 1;
+}
+.step-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+.step h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.step p {
+  color: var(--text-dim);
+  line-height: 1.6;
+  font-size: 0.93rem;
+}
+
+/* PRICING */
+.pricing-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.pricing-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+.pricing-sub {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  margin-bottom: 44px;
+  max-width: 460px;
+}
+.pricing-card {
+  background: var(--surface);
+  border: 2px solid var(--text);
+  border-radius: 18px;
+  padding: 44px;
+  max-width: 500px;
+  position: relative;
+}
+.pricing-popular {
+  position: absolute;
+  top: -14px;
+  left: 28px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.price-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+  margin-top: 8px;
+}
+.price-euro {
+  font-family: 'Fraunces', serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--text);
+}
+.price-period {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+.price-setup {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-bottom: 28px;
+}
+.price-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.price-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.96rem;
+  color: var(--text-mid);
+}
+.price-features li:last-child { border-bottom: none; }
+.check {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.price-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.faq-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 44px;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.faq-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px;
+}
+.faq-q {
+  font-weight: 700;
+  font-size: 1.02rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.faq-a {
+  color: var(--text-dim);
+  line-height: 1.65;
+  font-size: 0.93rem;
+}
+
+/* FINAL CTA */
+.final-cta {
+  padding: 100px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: var(--text);
+  color: #fff;
+}
+.final-cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.final-cta p {
+  color: #aaa;
+  font-size: 1.05rem;
+  margin-bottom: 36px;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+.final-cta .btn-primary {
+  background: #fff;
+  color: #111;
+}
+.final-cta .btn-primary:hover {
+  opacity: 0.9;
+  box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+}
+
+/* FOOTER */
+footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  background: var(--bg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .demo-card {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 36px;
+  }
+  .stats-row { grid-template-columns: 1fr; gap: 10px; }
+  .steps { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .hero { padding: 60px 0 50px; }
+  .hero h1 { letter-spacing: -1px; }
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+  .pricing-card { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      RappelSMS
+    </div>
+    <a href="#pricing" class="nav-cta">Réserver une démo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      ⚡ Installation en 24h
+    </div>
+    <h1>Chaque appel manqué vous coûte <span class="underline">un client.</span></h1>
+    <p class="hero-sub">
+      <strong>62% des appelants ne rappellent jamais.</strong> Notre système envoie un SMS automatique en 5 secondes à chaque appel manqué. Vous ne perdez plus jamais une opportunité.
+    </p>
+    <div class="hero-ctas">
+      <a href="#pricing" class="btn-primary">Réserver ma démo gratuite →</a>
+      <a href="#how" class="btn-secondary">Comment ça marche</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE DEMO -->
+<section class="demo-section">
+  <div class="container">
+    <div class="demo-card">
+      <div class="demo-left">
+        <h2>Votre téléphone sonne.<br>Personne ne décroche.</h2>
+        <p>Au lieu de perdre ce client, notre système lui envoie un SMS personnalisé en 5 secondes. Le prospect reste engagé, et vous le rappelez quand vous êtes disponible.</p>
+        <a href="#pricing" class="btn-primary">Essayer maintenant →</a>
+      </div>
+      <div class="demo-right">
+        <div class="phone-mock">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="sms-header">Messages · Plombier Express</div>
+            <div class="missed-call-banner">
+              <span class="missed-icon">📞</span>
+              Appel manqué · 14:32
+            </div>
+            <div class="sms-bubble sms-incoming">
+              Bonjour ! Désolé d'avoir manqué votre appel. Comment pouvons-nous vous aider ? Répondez ici ou nous vous rappelons dans les 10 min 🙂
+            </div>
+            <div class="sms-time">14:32 · Envoyé automatiquement</div>
+            <div class="sms-bubble sms-reply">
+              Bonjour, j'ai une fuite sous l'évier, vous pouvez passer aujourd'hui ?
+            </div>
+            <div class="sms-time-2">14:34</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">62%</div>
+        <div class="stat-label">des appelants ne rappellent jamais après un appel manqué</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5s</div>
+        <div class="stat-label">pour envoyer un SMS automatique après l'appel manqué</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">+80</div>
+        <div class="stat-label">clients récupérés par mois en moyenne par nos utilisateurs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="container">
+    <div class="section-label">Comment ça marche</div>
+    <h2>Installation en 24h.<br>Zéro effort de votre côté.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">📱</div>
+        <h3>On connecte votre numéro</h3>
+        <p>On lie votre numéro professionnel à notre système. Vos clients appellent le même numéro qu'avant. Rien ne change pour eux.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-icon">⚡</div>
+        <h3>SMS automatique en 5 secondes</h3>
+        <p>Dès qu'un appel est manqué, un SMS personnalisé part instantanément. Votre prospect sait que vous existez et que vous allez le recontacter.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">📊</div>
+        <h3>Vous récupérez chaque lead</h3>
+        <p>Chaque appel et SMS est tracé. Vous recevez un récapitulatif mensuel avec le nombre de clients récupérés. Simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-label">Tarif</div>
+    <h2>Un prix simple. Pas de surprises.</h2>
+    <p class="pricing-sub">Sans engagement. Vous annulez quand vous voulez.</p>
+
+    <div class="pricing-card">
+      <div class="pricing-popular">Le plus populaire</div>
+      <div class="price-amount">
+        <span class="price-euro">99€</span>
+        <span class="price-period">/ mois</span>
+      </div>
+      <div class="price-setup">Installation offerte · Actif en 24h</div>
+
+      <ul class="price-features">
+        <li><span class="check">✓</span> SMS automatique à chaque appel manqué</li>
+        <li><span class="check">✓</span> Message personnalisé à votre activité</li>
+        <li><span class="check">✓</span> Suivi de tous les appels et SMS</li>
+        <li><span class="check">✓</span> Rapport mensuel de performance</li>
+        <li><span class="check">✓</span> Sans engagement, annulez à tout moment</li>
+        <li><span class="check">✓</span> Support par WhatsApp 7j/7</li>
+      </ul>
+
+      <a href="https://calendly.com/VOTRE-LIEN" class="btn-primary" style="width: 100%; justify-content: center;">
+        Réserver ma démo gratuite →
+      </a>
+
+      <div class="price-guarantee">
+        🛡️ Satisfait ou remboursé pendant 30 jours. Si notre système ne vous apporte pas de résultats, on vous rembourse intégralement.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label">Questions fréquentes</div>
+    <h2>Vos questions, nos réponses.</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Est-ce que mes clients voient un numéro différent ?</div>
+        <div class="faq-a">Non. Vos clients appellent votre numéro habituel. Le système est invisible pour eux. La seule différence, c'est qu'ils reçoivent un SMS si vous ne décrochez pas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">C'est compliqué à mettre en place ?</div>
+        <div class="faq-a">Zéro effort de votre côté. On s'occupe de tout en moins de 24h. Vous n'avez rien à installer, rien à configurer.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Et si je veux arrêter ?</div>
+        <div class="faq-a">Pas de contrat, pas d'engagement. Vous envoyez un message, on désactive le système. Votre numéro reste le vôtre.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Ça marche pour quel type de business ?</div>
+        <div class="faq-a">Plombiers, restaurants, salons, garages, nettoyage, dentistes. Tout business qui reçoit des appels et qui en rate. Si vous recevez plus de 5 appels par jour, c'est fait pour vous.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Combien de clients avez-vous perdu cette semaine ?</h2>
+    <p>Réservez 10 minutes avec nous. On vous montre exactement comment ça fonctionne avec votre numéro.</p>
+    <a href="https://calendly.com/VOTRE-LIEN" class="btn-primary">Réserver ma démo gratuite →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 RappelSMS · contact@rappelsms.fr</p>
+  </div>
+</footer>
+
+</body>
+</html>
